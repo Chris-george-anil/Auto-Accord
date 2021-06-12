@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+<script type="text/javascript">
+
+ async function run(){
+   var x=[<%=details%>];
+  const MODEL_URL = '/model.json';
+      const model = await tf.loadLayersModel(MODEL_URL);
+      const input = tf.tensor2d(x, [1, 8]);
+      // tf.cast(input, tf.float32)
+      // input= numpy.array(input,dtype=numpy.float64)
+    var result = model.predict(input);
+    $("#here").html( "Rs." + new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(result.dataSync()));
+    console.log(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(result.dataSync()));
+}
+
+
+run();
+</script>
+
+
+<div class="">
+  <div id="cover">
+  <h1>Estimated cost of your vehicle</h1>
+
+  <h5 id="here"> Please Wait... </h5>
+<center style="padding:40px;">
+  <a role="button"class="btn btn-dark" href="/home">Go Home</a>
+  <a role="button"class="btn btn-dark" href="/sellpage">Proceed to sales</a>
+
+  </center>
+</div>
+</div>

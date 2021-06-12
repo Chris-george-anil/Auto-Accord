@@ -1,0 +1,47 @@
+<%- include("partials/header") %>
+
+<div style="width: 450px;height: 650px;">
+  <div id="cover">
+  <h1>Get your dream car now</h1>
+  <h3>Check out our wide range of cars suited for your needs. </h3>
+<br><br>
+  <center>
+    <form action="/buycars" method="post">
+      <select class="" name="Filter">
+        <option value="name">Name</option>
+        <option value="year">Year</option>
+        <option value="selling_price">Selling Price</option>
+        <option value="km_driven">Kilometers</option>
+        <option value="fuel">Fuel</option>
+        <option value="transmission">Transmission</option>
+        <option value="owner">Max Number of Owners</option>
+        <option value="mileage">Mileage</option>
+        <option value="engine">Engine</option> <option value="max power">Power</option>
+        <option value="seats">Seats</option>
+      </select>
+      <br> <br>
+<label for="val"> Enter value :</label>
+      <input type="text" name="val" value=""> <br> <br>
+<button type="reset" class="btn btn-dark" name="button">Reset</button>
+      <button type="submit" class="btn btn-dark"  name="button">Search</button>
+    </form>
+    </center>
+</div> </div>
+
+
+<div class="search">
+  <table class="table table-dark table-striped" style="width:90%">
+    <tr>
+      <td>Name</td> <td>Previous Owner</td> <td>Fuel</td> <td>Mileage</td> <td>Transmission</td>
+<td>Kilometers Driven</td> <td>Selling Price</td>
+    </tr>
+    <% if(items.length > 0){ %>
+<% items.forEach(function(p){%>
+  <tr>
+    <td><%= p.name%></td> <td><%= p.owner%></td> <td><%= p.fuel%></td> <td><%= p.mileage%></td>
+    <td><%= p.transmission%></td> <td><%= p.km_driven%></td> <td><%= p.selling_price%></td>
+    <td><a role="button" class="btn btn-dark" href="/buff/<%=p.id%>"> Buy Now</a></td>
+  </tr>
+  <%}); } %>
+  </table>
+</div>

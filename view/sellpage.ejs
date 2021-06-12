@@ -1,0 +1,41 @@
+<%- include("partials/header") %>
+
+<div class="container">
+
+  <center id="thanks">
+   <h2>Thank u for trusting us.... Enter Your Car details below.</h2>
+
+    </center>
+<center>
+      <form  id="myform" style="position:relative" action="/sellpage" method="post">
+      <h1 class="h3 mb-3 font-weight-normal" id="signtext">Enter car details here.</h1>
+      <table>
+        <tr>
+          <td> <label for="Customer">Enter name of the Customer.</label></td>
+          <td> <input type="text" name="Customer" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="model">Name of the Model of the Vehicle.</label>
+          </td>
+          <td> <input type="text" name="model" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="RC">Enter RC Book Number </label></td>
+          <td> <input type="number" name="RC" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="vehicleno">Enter Vehicle Number</label></td>
+          <td> <input type="text" name="vehicleno" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="vimage"> Vehicle Photo</label></td>
+          <td> <input type="file" name="vimage" value=""><br /></td>
+        </tr>
+      </table>
+      <input type="reset" class="btn btn-dark" value="Reset">
+      <button type="submit" class="btn btn-dark" href="/sales" name="button">Print Sales Report</button>
+
+    </form>
+  </center>
+
+</div>

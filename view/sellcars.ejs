@@ -1,0 +1,56 @@
+<%- include("partials/header") %>
+<div class="" style="width: 500px;height: 750px;">
+  <div id="cover">
+    <h1>Easiest way to sell your car</h1>
+    <h3>Get a free estimate of your car now </h3>
+  </div>
+</div>
+
+<section id="info">
+  <center>
+    <form  id="myform" action="/sellcars" method="post">
+      <h1 class="h3 mb-3 font-weight-normal" id="signtext">Check your cars value for free now !!!!!</h1>
+      <table>
+        <tr>
+          <td> <label for="name">Enter name of the car.</label></td>
+          <td> <input type="text" name="name" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="kms">Distance covered in KMs.</label>
+          </td>
+          <td> <input type="number" name="kms" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="fuel">Enter type of fuel used (Petrol/Diesel).</label></td>
+          <td> <input type="text" name="fuel" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="seller">Type of seller</label></td>
+          <td> <input type="text" name="seller" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="transmission">Type of transmission</label></td>
+          <td> <input type="text" name="transmission" value=""> <br /></td>
+        </tr>
+        <tr>
+          <td> <label for="owner">Number of previous Owners</label></td>
+          <td> <input type="number" name="owner" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="years">Number of Years</label></td>
+          <td> <input type="number" name="years" value=""><br /></td>
+        </tr>
+        <tr>
+          <td> <label for="seats">Number of seats</label></td>
+          <td> <input type="number" name="seats" value=""><br /></td>
+        </tr>
+      </table>
+      <input type="reset" class="btn btn-dark" value="Reset"> <button type="submit" onclick="run()" class="btn btn-dark" href="#here"
+      name="button">Submit </button>
+    </form>
+  </center>
+</section>
+
+<div id="result">
+<p id="here"></p>
+</div>
